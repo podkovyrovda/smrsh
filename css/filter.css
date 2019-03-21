@@ -1,0 +1,234 @@
+.filter {
+  position: relative;
+  width: 600px;
+}
+
+.filter select,
+.filter input,
+.filter button,
+.filter div {
+  font-size: 14px;
+  font-family: Arial;
+}
+/*Скрываем по умолчанию стандартные селекты
+показываем только на мобильных*/
+.filter select {
+  width: 100%;
+  display: none;
+}
+
+.filter__line {
+  display: flex;
+  margin-bottom: 6px;
+}
+
+.filter__line:first-child button{
+  display: none;
+}
+
+.filter__line input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.filter__col {
+  position: relative;
+  width: 190px;
+  margin-right: 6px;
+}
+
+.filter__select {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  border-radius: 3px;
+  padding: 4px 10px 4px 10px;
+  background-image: url(../img/arrow-down.svg);
+  background-size: 10px 10px;
+  background-position: 170px 50%;
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  z-index: 1;
+  position: relative;
+}
+
+.filter__select--active {
+  background-color: #E6E6E6
+}
+
+.filter__option {
+  padding: 4px 10px 4px 10px;
+  display: block;
+  position: absolute;
+}
+
+.filter__input {
+  width: calc(100% - 22px);
+  background-color: #FFFFFF;
+  border: 1px solid #C4C4C4;
+  border-radius: 3px;
+  padding: 4px 10px 4px 10px;
+}
+
+.filter__control-buttons {
+  border-top: 1px solid #C4C4C4;
+  padding: 10px
+}
+
+.filter__button {
+  border: 0;
+  background-color: #ffffff;
+  padding: 5px 10px 5px 10px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.filter__button--apply {
+  background-color: #2994E0;
+  border: 1px solid #2994E0;
+  border-radius: 3px;
+  color: white;
+}
+
+.filter__button--add {
+  background: #ffffff;
+  border: 0;
+  margin: 20px 0 20px 0;
+  color: #2994E0;
+}
+
+.filter__button--add::before {
+  content: '+';
+  font-weight: 600;
+  padding-right: 5px;
+}
+
+.filter__button--clear {
+  border: 1px solid #C4C4C4;
+  border-radius: 3px;
+}
+
+.filter__button--add-disable {
+  color: #E6E6E6;
+}
+
+.filter__button--delete {
+  background: #ffffff;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: block;
+  width: 11px;
+  height: auto;
+  position: relative;
+  cursor: pointer;
+}
+
+.filter__button--delete::before,
+.filter__button--delete::after  {
+  position: absolute;
+  content: ' ';
+  
+  top: 0;
+  left: 0px;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+
+  height: 12px;
+  width: 3px;
+  background-color: #D7D7D7;
+}
+
+.filter__button--delete::before {
+  transform: rotate(45deg);
+}
+
+.filter__button--delete::after {
+  transform: rotate(-45deg);
+}
+
+.custom-select-box {
+  position: absolute;
+  width: 100%;
+  background: #ffffff;
+  padding: 5px 0px 5px 0px;
+  margin: 5px 0;
+  border: 1px solid #C4C4C4;
+  border-radius: 3px;
+  display: none;
+  z-index: 100;
+}
+
+.custom-select-box__label {
+  display: block;
+  position: relative;
+}
+
+.custom-select-box__item {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.custom-select-box__item + div {
+  padding: 6px 10px 6px 10px;
+}
+
+.custom-select-box__item:checked + div {
+  background: #D8E9F9;
+}
+
+.custom-select-box:hover .custom-select-box__item + div {
+  background: #ffffff;
+}
+
+.custom-select-box__label:hover .custom-select-box__item + div {
+  background: #D8E9F9;
+}
+
+.custom-select {
+  width: 100%;
+  border: 1px solid #C4C4C4;
+  border-radius: 3px;
+  padding: 4px 10px 4px 10px;
+  background-image: url(../img/arrow-down.svg);
+  background-size: 10px 10px;
+  background-position: calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  text-align: left;
+  background-color: white;
+}
+
+.custom-select--disabled {
+  background-color: #E6E6E6
+}
+
+.custom-select-div {
+}
+
+.show {
+  display: block!important;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+/*На планшетах/ мобильных показываем стандартные селекты*/
+
+@media (max-width: 480px) {
+  .filter select {
+    display: block;
+  }
+
+  .custom-select {
+    display: none;
+  }
+
+}
