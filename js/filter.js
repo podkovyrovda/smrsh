@@ -116,7 +116,7 @@ let filter = {
   showDropdown: function (e) {
     const fieldsets = document.querySelectorAll('fieldset');
 
-    const array = Array.prototype.slice.call(fieldsets);
+    const array = Array.from(fieldsets);
 
     const shownFieldset = array.find((el) => {
       return el.classList.contains('show')
@@ -376,7 +376,7 @@ let filter = {
       checkedRadio.focus();
     });
 
-    const arr = Array.prototype.slice.call(fieldset.childNodes);
+    const arr = Array.from(fieldset.childNodes);
 
     input.addEventListener('keyup', (e) => {
       const keyName = event.key
@@ -454,7 +454,7 @@ let filter = {
   },
 
   findCheckedRadio: function (fieldset, select) {
-    const arr = Array.prototype.slice.call(fieldset.childNodes);
+    const arr = Array.from(fieldset.childNodes);
 
     const checkedLabel = arr.find((el) => {
       return el.firstChild.value === select.value
