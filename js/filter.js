@@ -9,23 +9,13 @@ let filter = {
         'Begins with',
         'Ends with'
       ],
-      default: false
+      default: true
     },
     {
       type: 'number',
       title: 'Number field',
       operations: [
         'Equal',
-        'Greater than',
-        'Less than'
-      ],
-      default: true
-    },
-    {
-      type: 'image',
-      title: 'Image field',
-      operations: [
-        'Test',
         'Greater than',
         'Less than'
       ],
@@ -285,6 +275,7 @@ let filter = {
     //находим её стили и текст на кнопке из базы
     let classOfButton = '';
     let textOnButton = '';
+    let name = '';
     this.buttons.forEach(function(button){
       if(button.type === type){
         name = button.type;  
@@ -362,7 +353,7 @@ let filter = {
         }
       });
 
-      index = data.indexOf(element);
+      let index = data.indexOf(element);
       if (index === 0) {
         radio.setAttribute('checked', 'checked');
       }
@@ -508,11 +499,12 @@ let filter = {
   },
 
   getType: function (title) {
+    let type = '';
     this.data.forEach((el) => {
       if(el.title === title) {
         type = el.type;
       }
-    })
+    });
     return type;
   },
 
@@ -533,6 +525,9 @@ let filter = {
   },
 
   getDefaultType: function () {
+    let title = '';
+    let type = '';
+    let index = '';
     this.data.forEach((el) => {
       if(el.default) {
         title = el.title;
