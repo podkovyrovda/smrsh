@@ -1,4 +1,4 @@
-var filter = {
+let filter = {
   data: [
     {
       type: 'text',
@@ -9,13 +9,23 @@ var filter = {
         'Begins with',
         'Ends with'
       ],
-      default: true
+      default: false
     },
     {
       type: 'number',
       title: 'Number field',
       operations: [
         'Equal',
+        'Greater than',
+        'Less than'
+      ],
+      default: true
+    },
+    {
+      type: 'image',
+      title: 'Image field',
+      operations: [
+        'Test',
         'Greater than',
         'Less than'
       ],
@@ -217,8 +227,8 @@ var filter = {
   },
 
   changeOperations: function (e) {
-    var parent;
-    var operations;
+    let parent;
+    let operations;
         //получаем родителя блока, в котором происходит изменение, и блок, который надо заменить
     if (e.currentTarget.classList.contains('custom-select')) {
       //если событие в кастомном селекте
@@ -466,7 +476,7 @@ var filter = {
   getOutput: function (e) {
     e.preventDefault();
     
-    var output = {}
+    let output = {}
     filter.data.forEach(function(el){
         output[el.type] = []
     })
@@ -508,7 +518,7 @@ var filter = {
 
   getDataType: function (data) {
     //получаем данные из даты
-    var dataType = data.map((el) => {
+    let dataType = data.map((el) => {
       return el.title;
     });
 
@@ -534,7 +544,7 @@ var filter = {
   },
 
   getDataOperations: function (data, type) {
-    var operations = [];
+    let operations = [];
     data.forEach((el) => {
       if(el.type === type) {
         operations = el.operations;
