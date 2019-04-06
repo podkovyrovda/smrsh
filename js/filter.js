@@ -161,7 +161,7 @@ let filter = {
   addRow: function (e) {
     e.preventDefault();
     //получаем все созданные строки
-    const rows = this.mainDiv.getElementsByClassName('filter__line');
+    const rows = this.mainDiv.querySelectorAll('.filter__line');
     //если создана только одна, находим в ней кнопку 'delete', и присваиваем класс show
     //по умолчанию кнопка у первой строки скрыта
     if (rows.length === 1) {
@@ -185,7 +185,7 @@ let filter = {
   deleteRow: function (e) {
     e.preventDefault();
     //получаем все созданные строки
-    const rows = this.mainDiv.getElementsByClassName('filter__line');
+    const rows = this.mainDiv.querySelectorAll('.filter__line');
     //если строки 2, то находим в первой строке кнопку 'delete',
     //и удаляем класс 'hide'
     if (rows.length === 2) {
@@ -482,7 +482,7 @@ let filter = {
     })
 
     //получаем коллекцию строк фильтра
-    const collection = this.mainDiv.getElementsByClassName('filter__line');
+    const collection = this.mainDiv.querySelectorAll('.filter__line');
 
     [].forEach.call(collection, function(el) {
       //находим селект с типами
