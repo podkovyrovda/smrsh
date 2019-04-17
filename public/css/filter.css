@@ -14,7 +14,6 @@
 показываем только на мобильных*/
 .filter select {
   width: 100%;
-  display: none;
 }
 
 .filter__line {
@@ -98,6 +97,8 @@ input::-webkit-inner-spin-button {
   border: 0;
   margin: 20px 0 20px 0;
   color: #2994E0;
+  width: 100%;
+  text-align: left;
 }
 
 .filter__button--add::before {
